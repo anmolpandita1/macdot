@@ -1,0 +1,16 @@
+live_config_reload: true
+
+window:
+  opacity: 0.85
+  padding:
+    x: 18
+    y: 16
+  dynamic_padding: false
+  decorations: buttonless
+
+font:
+  size: 18.0
+
+key_bindings:
+    - { key: F, mods: Command|Control|Option|Shift, chars: "cd $(find ~ -type d 2>/dev/null | fzf) && clear \x0D" }
+    - { key: O, mods: Command|Control|Option|Shift, chars: "open $PWD \x0D" }

@@ -1,0 +1,14 @@
+##!/usr/bin/env zsh
+
+# env
+
+export EDITOR=nvim
+export MANPAGER='nvim +Man!'
+
+
+# homebrew
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+
+# PATH
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"

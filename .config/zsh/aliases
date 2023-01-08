@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+
+alias personal='cd ~/personal/'
+alias rcedit='$EDITOR ~/.zshrc'
+alias nconfig='pushd ~/.config/nvim/ && $EDITOR .'
+alias so='source ~/.zshrc'

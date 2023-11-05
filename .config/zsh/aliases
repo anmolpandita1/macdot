@@ -1,6 +1,11 @@
 #!/usr/bin/env zsh
 
-alias personal='cd ~/personal/'
+alias personal='mkcd ~/personal/'
+alias config='pushd ~/.config/ >/dev/null && $EDITOR . && popd > /dev/null'
+alias asdf='$(yabai --start-service &; skhd --start-service &;)'
+alias fdsa='$(yabai --stop-service &; skhd --stop-service &;)'
 alias rcedit='$EDITOR ~/.zshrc'
-alias nconfig='pushd ~/.config/nvim/ && $EDITOR .'
 alias so='source ~/.zshrc'
+alias vim='nvim'
+alias idea='open -a "IntelliJ IDEA CE.app"'
+alias rm='trash'

@@ -1,7 +1,11 @@
 # open alacritty
 alt - return : open -a alacritty
 alt - b : open -a "Google Chrome"
-alt - b : open -a "intelliJ IDEA"
+alt - i : open -a "intelliJ IDEA"
+
+# start and stop
+ctrl + alt - q : yabai --stop-service
+ctrl + alt - s : yabai --start-service
 
 # focus window
 alt - h : yabai -m window --focus west
@@ -20,6 +24,12 @@ shift + alt + ctrl - h : yabai -m window --warp west
 shift + alt + ctrl - j : yabai -m window --warp south
 shift + alt + ctrl - k : yabai -m window --warp north
 shift + alt + ctrl - l : yabai -m window --warp east
+
+# flip along x-axis
+ctrl + alt - x: yabai -m space --mirror x-axis
+
+# flip along y-axis
+ctrl + alt - y: yabai -m space --mirror y-axis
 
 # rotate tree
 alt - r : yabai -m space --rotate 90
@@ -80,4 +90,5 @@ alt - tab : yabai -m space --focus recent
 # send window to monitor and follow focus
 shift + alt - n : yabai -m window --display next; yabai -m display --focus next
 shift + alt - p : yabai -m window --display previous; yabai -m display --focus previous
+
 

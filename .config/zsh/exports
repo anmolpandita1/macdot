@@ -1,14 +1,33 @@
-##!/usr/bin/env zsh
+#!/usr/bin/env zsh
 
 # env
-
 export EDITOR=nvim
 export MANPAGER='nvim +Man!'
 
+# homebrew
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+
+# history size
+HISTSIZE=50000
+#history ignore duplicates
+HISTCONTROL=ignoredups
 
 # homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 
 # PATH
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+# export PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS:$PATH"
+export PATH="$PATH:/Users/anmolpandita/bin/"
+export LDFLAGS="-L/opt/homebrew/opt/postgresql@12/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/postgresql@12/include"
+
+
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"
+
+export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"

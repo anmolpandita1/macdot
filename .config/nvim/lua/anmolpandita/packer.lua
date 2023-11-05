@@ -26,7 +26,7 @@ return require('packer').startup(function(use)
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
-
+  use('vimwiki/vimwiki')
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  requires = {
@@ -48,7 +48,6 @@ return require('packer').startup(function(use)
 		  {'rafamadriz/friendly-snippets'},
 	  }
   }
-
   use("folke/zen-mode.nvim")
   use("github/copilot.vim")
 

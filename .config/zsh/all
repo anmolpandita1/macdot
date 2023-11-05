@@ -1,6 +1,0 @@
-#!/usr/bin/env zsh
-
-source ~/.config/zsh/aliases
-source ~/.config/zsh/exports
-source ~/.config/zsh/functions
-

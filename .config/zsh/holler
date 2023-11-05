@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+nvm use 18 &>/dev/null
+sdk use java 11.0.20 &>/dev/null
+sdk use java 19.0.1 &>/dev/null
+
+

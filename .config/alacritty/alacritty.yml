@@ -1,6 +1,9 @@
 live_config_reload: true
+env:
+  TERM: xterm-256color
 
 window:
+  option_as_alt: Both
   opacity: 0.85
   padding:
     x: 18
@@ -8,9 +11,17 @@ window:
   dynamic_padding: false
   decorations: buttonless
 
+selection:
+  save_to_clipboard: true
+
+scrolling:
+  history: 50000
+
+
 font:
   size: 18.0
 
 key_bindings:
-    - { key: F, mods: Command|Control|Option|Shift, chars: "cd $(find ~ -type d 2>/dev/null | fzf) && clear \x0D" }
-    - { key: O, mods: Command|Control|Option|Shift, chars: "open $PWD \x0D" }
+    - { key: F, mods: Command|shift, chars: "fuzzy \x0D" }
+    - { key: O, mods: Command|Shift, chars: "open $PWD && clear \x0D" }
+    - { key: T, mods: Control, chars: "_tmux \x0D" }

@@ -1,5 +1,16 @@
 #!/usr/bin/env zsh
 
+FUZZY_FOLDERS=(
+    'Desktop',
+    'Documents',
+    'Downloads',
+    'Movies',
+    'Music',
+    'bin',
+    'personal',
+    'walls'
+)
+
 addToPath() {
     if [[ "$PATH" != *"$1"* ]]; then
         export PATH=$PATH:$1
@@ -11,3 +22,30 @@ addToPathFront() {
         export PATH=$1:$PATH
     fi
 }
+
+cht() {
+    cht.sh $1 | less
+}
+
+
+fuzzy() {
+    directories=$(for folder in $FUZZY_FOLDERS; do echo "$HOME/$folder" | tr ',\n' ' '; done)
+    pushd $(find $(echo ${directories}) -type d 2>/dev/null | fzf) &>/dev/null
+}
+
+
+# tmux helper
+_tmux() {
+    sessions=$(tmux list-sessions -F "#S" | grep -v "$(basename ${PWD})")
+    session=$(echo "$(basename ${PWD})" | sed "s/\.//g" | cat - <(echo "${sessions}") | fzf)
+    if ! tmux has-session -t "${session}"; then
+        tmux new-session -ds "${session}";
+    fi
+
+    if [[ "${TMUX}" != "" ]]; then
+        tmux switch-client -t "${session}" 2>/dev/null && return;
+    fi
+
+    tmux attach-session -t "$session" &>/dev/null
+}
+
